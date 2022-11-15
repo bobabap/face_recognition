@@ -29,7 +29,7 @@ base code 작성 , 코드 총괄
 
 dlib을 사용
 
-![Untitled](https://user-images.githubusercontent.com/87513112/201968062-0a2d9432-0052-4d7d-955b-61e8bc9a07ce.png)
+<img src=https://user-images.githubusercontent.com/87513112/201968062-0a2d9432-0052-4d7d-955b-61e8bc9a07ce.png  width="300" height="300"/>
 
 
 **68개의 얼굴 랜드마크를 이용해 이미지 전처리 후 128개의 임베딩 백터 거리 값을 계산해 닮은 꼴을 찾아 동일인을 구분할 수 있는 dlib 라이브러리를 사용하여 닮은 꼴을 찾아 동일인을 구분한다.**
