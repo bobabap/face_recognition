@@ -30,7 +30,7 @@ base code 작성 , 코드 총괄
 ![AI_11__AI_12__CS2_](https://user-images.githubusercontent.com/87513112/201985381-4fb801ba-87c9-482d-9cde-c2313b2f3ebb.jpg)
 
 
-- 얼굴 인식과 이미지 변형, 임베딩 벡터 구하는 기능이 구현되있는 dlib
+- 얼굴 인식과 이미지 변형, 임베딩 벡터 구하는 기능이 구현되있는 dlib과 다른 얼굴 인식 모델 CaffeNet 사용
 1. 68개의 얼굴 랜드마크를 이용해 이미지 전처리 후 128개의 임베딩 백터 거리 값 계산하여 동일인 비교
 
 ![Untitled (4)](https://user-images.githubusercontent.com/87513112/201985408-2c723813-7dea-4973-a463-fc99a7dab86f.png)
