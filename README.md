@@ -20,8 +20,7 @@
 ### crop_embedding.py
 
 - img_embedding
-
-- face.txt 에 있는 이미지 URL을 가져와 embedding 값을 구하여 반환하는 함수
+face.txt 에 있는 이미지 URL을 가져와 embedding 값을 구하여 반환하는 함수
 
 1. *인코딩 값을 구하기 전, 속도 개선을 위해 먼저* detectAndDisplay함수로 *이미지를 crop한다.*
 2. crop한 이미지를 get_face_embedding_dict *함수 안에서 임베딩 값을 구한다.*
