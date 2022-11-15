@@ -49,9 +49,9 @@ prototxt_name='face_rec/deploy.prototxt.txt'
 
 def detectAndDisplay(img):
     # 원본 사진을 face_recognition.face_encodings 를 활용해
-    # crop과 encoding을 할 수 있지만 시간이 오래걸리기 때문에
-    # 크롭하고 인코딩값을 구한다.
+    # crop과 encoding을 할 수 있지만 시간을 단축시키기 위해 때문에 이미지를 먼저 자른다.
     
+    # 해당 모델을 blob 형태로 변환한다
     (height, width) = img.shape[:2]
     model=cv2.dnn.readNetFromCaffe(prototxt_name,model_name)
     blob=cv2.dnn.blobFromImage(cv2.resize(img,(300,300)),1.0, (300,300),(104.0,177.0,123.0))
@@ -103,7 +103,7 @@ def img_embedding(path): #path는 main.py에 있는 txt디렉토리
             else:
                 print('Allow png, jpg, jpeg, jfif extensions only')
                 
-                if num == 0: #만약 '셀카'의 확장자가 이상하면 프로그램 종료
+                if num == 0: # 지정된 확장자가 아니면 함수 종료
                     sys.exit(f'셀카의 확장자가 {extension} 입니다.')
                     
                       
@@ -124,7 +124,7 @@ def img_embedding(path): #path는 main.py에 있는 txt디렉토리
             print('해당 url 이미지를 불러올 수 없음')
             image = None
 
-        '''image를 잘 받았을 때 crop하기'''
+        '''모든 image의 이상이 없다면 crop 시작'''
         if image is not None:
 
             crop_img = detectAndDisplay(image)
