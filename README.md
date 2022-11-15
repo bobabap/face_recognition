@@ -2,15 +2,15 @@
 ```
 ├─ func
 
-│  ├─ comparison.py
+│    ├─ comparison.py
 
-│  ├─ crop_embedding.py
+│    ├─ crop_embedding.py
 
-│  └─ __init__.py
+│    └─ __init__.py
 
 ├─ images
 
-│  └─ faces.txt
+│    └─ faces.txt
 
 ├─ main.py
 
