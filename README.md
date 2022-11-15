@@ -25,11 +25,12 @@ base code 작성 , 코드 총괄
 얼굴 인식 모델 API를 활용하였다.
 얼굴 인식 모델까지 만드려면 얼굴 데이터 수집부터 많은 시간이 걸리고 그 만큼 효과를 기대하기 어렵기 때문에 8가지의 모델 비교를 통해 가장 빠르고 성능이 좋은 모델을 사용하였다.
 
-![AI_11__AI_12__CS2_.jpg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/21ce387d-5582-44aa-b80e-001fc022df2e/AI_11__AI_12__CS2_.jpg)
+![AI_11__AI_12__CS2_](https://user-images.githubusercontent.com/87513112/201968020-f1b108e9-863c-4d1f-b1ef-99dd354d5277.jpg)
 
 dlib을 사용
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ab1a1d60-5743-4eb8-b85e-02c65d7e341f/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/87513112/201968062-0a2d9432-0052-4d7d-955b-61e8bc9a07ce.png)
+
 
 **68개의 얼굴 랜드마크를 이용해 이미지 전처리 후 128개의 임베딩 백터 거리 값을 계산해 닮은 꼴을 찾아 동일인을 구분할 수 있는 dlib 라이브러리를 사용하여 닮은 꼴을 찾아 동일인을 구분한다.**
 
