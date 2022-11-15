@@ -1,7 +1,5 @@
 ```python
 ```
-face_rec
-
 ├─ func
 
 │  ├─ comparison.py
