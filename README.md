@@ -1,13 +1,21 @@
 ```python
 ```
 face_rec
+
 ├─ func
+
 │  ├─ comparison.py
+
 │  ├─ crop_embedding.py
+
 │  └─ __init__.py
+
 ├─ images
+
 │  └─ faces.txt
+
 ├─ main.py
+
 ```
 ```
 
