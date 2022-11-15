@@ -33,7 +33,7 @@ base code 작성 , 코드 총괄
 - 얼굴 인식과 이미지 변형, 임베딩 벡터 구하는 기능이 구현되있는 dlib과 다른 얼굴 인식 모델 CaffeNet 사용
 1. 68개의 얼굴 랜드마크를 이용해 이미지 전처리 후 128개의 임베딩 백터 거리 값 계산하여 동일인 비교
 
-![Untitled (4)](https://user-images.githubusercontent.com/87513112/201985408-2c723813-7dea-4973-a463-fc99a7dab86f.png)
+<img src=https://user-images.githubusercontent.com/87513112/201985786-d4f869ba-556d-4ea5-bf36-c43f510129d9.png  width="300" height="300"/>
 
 1. 또 다른 얼굴 인식 모델인 CaffeNet를 사용하여 dlib의 보조 역할을 한다.
 2. L2 norm으로 이미지 벡터 거리 값을 계산하여 0 ~ 1 사이의 score로 나타냄
@@ -46,7 +46,7 @@ embedding = np.linalg.norm(all_img_embedding[i]-all_img_embedding[self_img_name]
 
 [결과]
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1bebda2d-adae-436c-b497-2a104594764c/Untitled.png)
+![Untitled (4)](https://user-images.githubusercontent.com/87513112/201985408-2c723813-7dea-4973-a463-fc99a7dab86f.png)
 
 - 동일인 비교 정확도 80% 이상
 
