@@ -1,3 +1,5 @@
+2022.07.18 ~ 2022.08.05
+
 [배경]
 
 - 시니어를 위한 데이팅 앱을 개발중에 있는 기업과의 협업
@@ -20,27 +22,43 @@ base code 작성 , 코드 총괄
 
 [진행]
 
-- 얼굴 인식 **모델 고르기**
+- 얼굴 인식 **모델 선택**
 
 얼굴 인식 모델 API를 활용하였다.
 얼굴 인식 모델까지 만드려면 얼굴 데이터 수집부터 많은 시간이 걸리고 그 만큼 효과를 기대하기 어렵기 때문에 8가지의 모델 비교를 통해 가장 빠르고 성능이 좋은 모델을 사용하였다.
 
-![AI_11__AI_12__CS2_](https://user-images.githubusercontent.com/87513112/201968020-f1b108e9-863c-4d1f-b1ef-99dd354d5277.jpg)
-
-dlib을 사용
-
-<img src=https://user-images.githubusercontent.com/87513112/201968062-0a2d9432-0052-4d7d-955b-61e8bc9a07ce.png  width="300" height="300"/>
+![AI_11__AI_12__CS2_](https://user-images.githubusercontent.com/87513112/201985381-4fb801ba-87c9-482d-9cde-c2313b2f3ebb.jpg)
 
 
-**68개의 얼굴 랜드마크를 이용해 이미지 전처리 후 128개의 임베딩 백터 거리 값을 계산해 닮은 꼴을 찾아 동일인을 구분할 수 있는 dlib 라이브러리를 사용하여 닮은 꼴을 찾아 동일인을 구분한다.**
+- 얼굴 인식과 이미지 변형, 임베딩 벡터 구하는 기능이 구현되있는 dlib
+1. 68개의 얼굴 랜드마크를 이용해 이미지 전처리 후 128개의 임베딩 백터 거리 값 계산하여 동일인 비교
+
+![Untitled (4)](https://user-images.githubusercontent.com/87513112/201985408-2c723813-7dea-4973-a463-fc99a7dab86f.png)
+
+1. 또 다른 얼굴 인식 모델인 CaffeNet를 사용하여 dlib의 보조 역할을 한다.
+2. L2 norm으로 이미지 벡터 거리 값을 계산하여 0 ~ 1 사이의 score로 나타냄
+
+```python
+embedding = np.linalg.norm(all_img_embedding[i]-all_img_embedding[self_img_name], ord=2) *# self_img_name --> 현재 사진*
+```
+
+****
 
 [결과]
 
-기존 코드 로컬 구동시간 **약 12초 이상 —>** 로컬 모델 구동시간 **약 3초**
-
-기존 코드 서버 구동시간 **약 9초 이상** —> 서버에서 구동 시 **약 2초**
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1bebda2d-adae-436c-b497-2a104594764c/Untitled.png)
 
 - 동일인 비교 정확도 80% 이상
+
+*임베딩 차 score 0.4 미만는 동일인으로 판정*
+
+*임베딩 차 score 0.4 이상은 비동일인으로 판정*
+
+- 구동 시간 단축
+
+로컬 **약 12초 이상 —>** **약 3초**
+
+서버 **약 9초 이상** —> **약 2초**
 
 [개선]
 
